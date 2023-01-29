@@ -1,0 +1,12 @@
+---
+version: '3.8'
+
+services:
+  github-runner:
+    image: github-runner
+    container_name: github-runner
+    environment:
+      GH_TOKEN: <TOKEN> # The token should at least have repo access
+      GH_OWNER: <OWNER> # Owner of the repo
+      GH_REPOSITORY: <REPO> # The repo you want to connect this runner to
+    restart: unless-stopped
